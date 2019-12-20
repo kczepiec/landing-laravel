@@ -23,8 +23,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  
 // Route::get('clients/{client}', 'ClientController@show');
  
-Route::post('clients','ClientController@store');
- 
+Route::group(['middleware' => 'cors'], function(){
+    Route::post('clients','ClientController@store');
+});
+
 // Route::put('clients/{client}','ClientController@update');
  
 // Route::delete('clients/{client}', 'ClientController@delete');
