@@ -25,9 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  
 // Route::get('clients/{client}', 'ClientController@show');
  
-Route::group(['middleware' => 'cors'], function(){
-    Route::post('clients','ClientController@store');
-});
+Route::post('clients','ClientController@store');
 
 // Route::put('clients/{client}','ClientController@update');
  
